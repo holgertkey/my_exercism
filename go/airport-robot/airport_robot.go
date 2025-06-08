@@ -10,29 +10,25 @@ type Greeter interface {
 }
 
 func SayHello(name string, g Greeter) string {
-    return g.Greet(name)
+    return "I can speak " + g.LanguageName() + ": " + g.Greet(name) 
 }
 
-type Italian struct {
-
-}
+type Italian struct {}
 
 func (i Italian) LanguageName() string {
     return "Italian"
 }
 
 func (i Italian) Greet(name string) string {
-    return "I can speak " + i.LanguageName() + ": Ciao " + name + "!" 
+    return "Ciao " + name + "!" 
 }
 
-type Portuguese struct {
-
-}
+type Portuguese struct {}
 
 func (p Portuguese) LanguageName() string {
     return "Portuguese"
 }
 
 func (p Portuguese) Greet (name string) string {
-    return "I can speak " + p.LanguageName() + ": Olá " + name + "!"
+    return "Olá " + name + "!"
 }
