@@ -15,7 +15,7 @@ func SplitLogLine(text string) []string {
 
 func CountQuotedPasswords(lines []string) int {
     count := 0
-    re := regexp.MustCompile(`"[^"]*([Pp][Aa][Ss][Ss][Ww][Oo][Rr][Dd])[^"]*"`)
+    re := regexp.MustCompile(`(?i)".*password.*"`)
     for _, line := range lines {
         if re.MatchString(line) {
             count++
