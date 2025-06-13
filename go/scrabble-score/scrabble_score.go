@@ -13,9 +13,8 @@ var lettersValues = map[rune]int{
 }
 
 func Score(word string) int {
-    lWord := strings.ToLower(word)
     count := 0
-    for _, letter := range lWord {
+    for _, letter := range strings.ToLower(word) {
         count += lettersValues[letter]
     }
     return count    
